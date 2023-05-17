@@ -95,7 +95,7 @@ public class SignUp extends JFrame{
                 String id = userIdField.getText().toString();
                 //String password = new String(userPasswordField.getPassword());
                 String password = userPasswordField.getText().toString();
-                String fileName = "C:\\JAVA\\ExGUI\\src\\Member.txt";
+                String fileName = "Member.txt";
                 try {
                     File file = new File(fileName);
                     BufferedWriter out = new BufferedWriter(new FileWriter(file,true));
