@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="경로수정">
-      <change afterPath="$PROJECT_DIR$/src/Timy/Calendar/CalendarApp.java" afterDir="false" />
+    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/GUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +21,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -64,19 +58,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JAVA/Timy-project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/JAVA/Timy-project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\JAVA\Timy-project\src\Timy" />
@@ -95,8 +89,6 @@
       <workItem from="1684308423635" duration="985000" />
       <workItem from="1684698950327" duration="18000" />
       <workItem from="1684802812457" duration="506000" />
-      <workItem from="1684803600314" duration="250000" />
-      <workItem from="1684804039314" duration="3997000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684306365539</created>
@@ -119,21 +111,7 @@
       <option name="project" value="LOCAL" />
       <updated>1684308610279</updated>
     </task>
-    <task id="LOCAL-00004" summary="init">
-      <created>1684803749566</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684803749566</updated>
-    </task>
-    <task id="LOCAL-00005" summary="경로수정">
-      <created>1684803759520</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1684803759520</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +131,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
     <MESSAGE value="init" />
-    <MESSAGE value="경로수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="경로수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>

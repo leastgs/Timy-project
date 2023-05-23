@@ -120,7 +120,7 @@ public class SignUp extends JFrame {
         String name = userNameField.getText().toString();
         String id = userIdField.getText().toString();
         String password = new String(userPasswordField.getPassword());
-        String fileName = "src/Timy/Member.txt\"";
+        String fileName = "Member.txt";
         try {
             if(!isFieldCheck()) {return;}
             if(!idDuplicate_Check()) {return;}
@@ -145,7 +145,7 @@ public class SignUp extends JFrame {
 
     private boolean idDuplicate_Check() {
         String id = userIdField.getText().toString();
-        String fileName = "src/Timy/Member.txt";
+        String fileName = "Member.txt";
         try {
             File file = new File(fileName);
             BufferedReader in = new BufferedReader(new FileReader(file));
