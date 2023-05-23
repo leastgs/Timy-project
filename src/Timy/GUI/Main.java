@@ -5,7 +5,6 @@ import Timy.SignUp.SignUp;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 class Main extends JFrame {
     final int SCREEN_WIDTH = 1920;
@@ -26,18 +25,6 @@ class Main extends JFrame {
 //            System.exit(1);
 //        }
 
-        JButton next = new JButton("다음");
-        add(next);
-        next.setBounds(700,300,80,40);
-
-        next.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new Login();
-                dispose();
-            }
-        });
-
         setLayout(null);
         setVisible(true);
     }
@@ -49,6 +36,11 @@ class Main extends JFrame {
             g.drawImage(background,0,0,null);
         }
     }
+
+    private void style() {
+
+    }
+
     public static void main(String[] args) {
         new Login();
         //new SignUp();
