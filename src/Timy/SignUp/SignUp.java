@@ -183,8 +183,4 @@ public class SignUp extends JFrame {
         }
         else {return true;}
     }
-
-    public static void main(String[] args) {
-        new SignUp();
-    }
 }
