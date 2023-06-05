@@ -2,6 +2,7 @@ package Timy.GUI;
 
 import Timy.Login.Login;
 import Timy.SignUp.SignUp;
+import Timy.Together.Together;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +44,8 @@ class Main extends JFrame {
 
     public static void main(String[] args) {
         //new Login();
-        new SignUp();
+        //new SignUp();
         //new Main();
+        Together.start();
     }
 }
