@@ -1,6 +1,9 @@
 package Timy.SignUp;
 
+import Timy.Login.Login;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.*;
@@ -34,29 +37,40 @@ public class SignUp extends JFrame {
 
     private void initComponents() {
         jPanel.setLayout(null);
+
         jPanel.add(infor);
         infor.setBounds(220, 20, 150, 50);
+
         jPanel.add(userName);
         userName.setBounds(160, 50, 150, 100);
+
         jPanel.add(userNameField);
         userNameField.setBounds(160, 110, 150, 30);
+
         jPanel.add(userId);
         userId.setBounds(160, 110, 150, 100);
+
         jPanel.add(userIdField);
         userIdField.setBounds(160, 170, 150, 30);
+
         jPanel.add(userPasssword);
         userPasssword.setBounds(160, 170, 150, 100);
+
         jPanel.add(userPasswordField);
         userPasswordField.setBounds(160, 230, 150, 30);
+
         jPanel.add(iD_DuplicateCheckBtn);
         iD_DuplicateCheckBtn.setBounds(320, 170, 90, 30);
+        iD_DuplicateCheckBtn.setBackground(Color.LIGHT_GRAY);
+
         jPanel.add(signUpBtn);
         signUpBtn.setBounds(160, 700, 150, 50);
+        signUpBtn.setBackground(Color.LIGHT_GRAY);
+
         jPanel.add(cancelBtn);
         cancelBtn.setBounds(350, 700, 80, 50);
+        cancelBtn.setBackground(Color.LIGHT_GRAY);
     }
-
-    private void addComponents() {}
 
     private void setEventListeners() {
         signUpBtn.addActionListener(new ActionListener() {
@@ -77,7 +91,7 @@ public class SignUp extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                //new Login();
+                new Login();
             }
         });
     }
@@ -120,7 +134,7 @@ public class SignUp extends JFrame {
         String name = userNameField.getText().toString();
         String id = userIdField.getText().toString();
         String password = new String(userPasswordField.getPassword());
-        String fileName = "Member.txt";
+        String fileName = "src/Member.txt";
         try {
             if(!isFieldCheck()) {return;}
             if(!idDuplicate_Check()) {return;}
@@ -145,7 +159,7 @@ public class SignUp extends JFrame {
 
     private boolean idDuplicate_Check() {
         String id = userIdField.getText().toString();
-        String fileName = "Member.txt";
+        String fileName = "src/Member.txt";
         try {
             File file = new File(fileName);
             BufferedReader in = new BufferedReader(new FileReader(file));

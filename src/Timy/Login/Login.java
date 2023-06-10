@@ -4,6 +4,7 @@ import Timy.SignUp.SignUp;
 import Timy.Timy;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,9 +58,11 @@ public class Login extends JFrame {
 
         add(loginButton);
         loginButton.setBounds(660,375,250,30);
+        loginButton.setBackground(Color.LIGHT_GRAY);
 
         add(signUpButton);
         signUpButton.setBounds(660,415,250,30);
+        signUpButton.setBackground(Color.LIGHT_GRAY);
 
     }
 
@@ -84,7 +87,7 @@ public class Login extends JFrame {
     private void logincheck() {
         String id = idFielD.getText();
         String password = new String(passwordFielD.getPassword());
-        String fileName = "Member.txt";
+        String fileName = "src/Member.txt";
 
         try {
             File file = new File(fileName);

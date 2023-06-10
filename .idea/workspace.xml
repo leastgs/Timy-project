@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="made logincheck method&#10;회원가입된거 바탕으로 로그인 됨">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/GUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Login/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/Member.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Member.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +81,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\JAVA\Timy-project\src" />
       <recent name="C:\JAVA\Timy-project\src\Timy" />
     </key>
   </component>
@@ -95,7 +100,7 @@
       <workItem from="1684802812457" duration="506000" />
       <workItem from="1684811671832" duration="41000" />
       <workItem from="1686337898649" duration="17000" />
-      <workItem from="1686410331058" duration="1089000" />
+      <workItem from="1686410331058" duration="2051000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684306365539</created>
@@ -139,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686410618103</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="made logincheck method&#10;회원가입된거 바탕으로 로그인 됨">
+      <created>1686416840565</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686416840565</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
