@@ -1,9 +1,14 @@
 package Timy.Login;
 
 import Timy.SignUp.SignUp;
+import Timy.Timy;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Login extends JFrame {
     final int SCREEN_WIDTH = 1920;
@@ -62,9 +67,7 @@ public class Login extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //로그인 화면
-                //new Timy();
-                dispose();
+                logincheck();
             }
         });
 
@@ -76,6 +79,45 @@ public class Login extends JFrame {
             }
 
         });
+    }
+
+    private void logincheck() {
+        String id = idFielD.getText();
+        String password = new String(passwordFielD.getPassword());
+        String fileName = "C:\\JAVA\\ExGUI\\src\\memberDate.txt";
+
+        try {
+            File file = new File(fileName);
+            BufferedReader in = new BufferedReader(new FileReader(file));
+
+            String line;
+            boolean isloginCheck = false;
+
+            while((line = in.readLine()) != null) {
+                String[] userInfo = line.split(" ");
+
+                if (userInfo.length >= 2) {
+                    String storedId = userInfo[1].trim();
+                    String storedPassword = userInfo[2].trim();
+
+                    if (id.equals(storedId) && password.equals(storedPassword)) {
+                        isloginCheck = true;
+                        break;
+                    }
+                }
+            }
+            in.close();
+
+            if(isloginCheck) {
+                JOptionPane.showMessageDialog(null,"로그인 성공", "login success",JOptionPane.INFORMATION_MESSAGE);
+                new Timy();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null,"아이디 비밀번호 오류", "login error",JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/Timy/Calendar/CalendarFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +20,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/Allday" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -36,7 +38,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1684308066" />
+                    <option name="lastUsedInstant" value="1686337615" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="test-develop" />
@@ -92,6 +94,7 @@
       <workItem from="1684698950327" duration="18000" />
       <workItem from="1684802812457" duration="506000" />
       <workItem from="1684811671832" duration="41000" />
+      <workItem from="1686337898649" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684306365539</created>
