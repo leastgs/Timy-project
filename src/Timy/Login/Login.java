@@ -84,7 +84,7 @@ public class Login extends JFrame {
     private void logincheck() {
         String id = idFielD.getText();
         String password = new String(passwordFielD.getPassword());
-        String fileName = "C:\\JAVA\\ExGUI\\src\\memberDate.txt";
+        String fileName = "Member.txt";
 
         try {
             File file = new File(fileName);
