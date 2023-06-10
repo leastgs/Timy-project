@@ -17,8 +17,8 @@ public class Login extends JFrame {
 
     private JPanel jPanel = new JPanel();
     private JLabel loginText = new JLabel("로그인");
-    private JLabel id = new JLabel("아이디"); //글씨
-    private JLabel passsword = new JLabel("비밀번호"); //글씨
+    private JLabel idText = new JLabel("아이디"); //글씨
+    private JLabel passswordText = new JLabel("비밀번호"); //글씨
     private JTextField idFielD= new JTextField();
     private JPasswordField passwordFielD = new JPasswordField(8);
     private JButton loginButton = new JButton("로그인");
@@ -42,26 +42,29 @@ public class Login extends JFrame {
         jPanel.setLayout(null);
 
         add(loginText);
-        loginText.setBounds(760,195,350,50);
+        loginText.setBounds(960,195,350,50);
+        loginText.setFont(new Font("",Font.BOLD,20));
 
-        add(id);
-        id.setBounds(600,265,80,40);
+        add(idText);
+        idText.setBounds(790,265,80,40);
 
-        add(passsword);
-        passsword.setBounds(600,315,80,40);
+        add(passswordText);
+        passswordText.setBounds(790,315,80,40);
 
         add(idFielD);
-        idFielD.setBounds(660,265,250,40);
+        idFielD.setBounds(860,265,250,40);
+        idFielD.setFont(new Font("",Font.PLAIN,16));
 
         add(passwordFielD);
-        passwordFielD.setBounds(660,315,250,40);
+        passwordFielD.setBounds(860,315,250,40);
+        passwordFielD.setFont(new Font("",Font.PLAIN,16));
 
         add(loginButton);
-        loginButton.setBounds(660,375,250,30);
+        loginButton.setBounds(860,375,250,30);
         loginButton.setBackground(Color.LIGHT_GRAY);
 
         add(signUpButton);
-        signUpButton.setBounds(660,415,250,30);
+        signUpButton.setBounds(860,415,250,30);
         signUpButton.setBackground(Color.LIGHT_GRAY);
 
     }
