@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.*;
 
 public class SignUp extends JFrame {
-    private JPanel jPanel = new JPanel();
+    private final JPanel jPanel = new JPanel();
     private JLabel infor = new JLabel("TIMY");
     private JLabel userName = new JLabel("*이름"); //글씨
     private JTextField userNameField = new JTextField("이름");
@@ -73,26 +73,13 @@ public class SignUp extends JFrame {
     }
 
     private void setEventListeners() {
-        signUpBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                joinMember();
-            }
-        });
+        signUpBtn.addActionListener(e -> joinMember());
 
-        iD_DuplicateCheckBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                idDuplicate_Check();
-            }
-        });
+        iD_DuplicateCheckBtn.addActionListener(e -> idDuplicate_Check());
 
-        cancelBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new Login();
-            }
+        cancelBtn.addActionListener(e -> {
+            dispose();
+            new Login();
         });
     }
 
@@ -131,8 +118,8 @@ public class SignUp extends JFrame {
     }
 
     private void joinMember() {
-        String name = userNameField.getText().toString();
-        String id = userIdField.getText().toString();
+        String name = userNameField.getText();
+        String id = userIdField.getText();
         String password = new String(userPasswordField.getPassword());
         String fileName = "src/Member.txt";
         try {
@@ -158,7 +145,7 @@ public class SignUp extends JFrame {
     }
 
     private boolean idDuplicate_Check() {
-        String id = userIdField.getText().toString();
+        String id = userIdField.getText();
         String fileName = "src/Member.txt";
         try {
             File file = new File(fileName);

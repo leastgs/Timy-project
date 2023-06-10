@@ -1,7 +1,7 @@
 package Timy.Login;
 
 import Timy.SignUp.SignUp;
-import Timy.Timy;
+import Timy.GUI.Timy;
 
 import javax.swing.*;
 import java.awt.*;
@@ -120,6 +120,7 @@ public class Login extends JFrame {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println(e);
         }
     }
 

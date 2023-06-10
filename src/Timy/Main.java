@@ -1,4 +1,4 @@
-package Timy.GUI;
+package Timy;
 
 import Timy.Login.Login;
 import Timy.SignUp.SignUp;

@@ -1,4 +1,4 @@
-package Timy;
+package Timy.GUI;
 
 
 import javax.swing.*;
