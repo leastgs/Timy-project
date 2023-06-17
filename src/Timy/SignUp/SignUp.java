@@ -1,22 +1,21 @@
-package Timy.SignUp;
-
-import Timy.Login.Login;
+package EXGUI;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.*;
 
 public class SignUp extends JFrame {
-    private final JPanel jPanel = new JPanel();
+    private JPanel jPanel = new JPanel();
     private JLabel infor = new JLabel("TIMY");
     private JLabel userName = new JLabel("*이름"); //글씨
     private JTextField userNameField = new JTextField("이름");
     private JLabel userId = new JLabel("*아이디"); //글씨
     private JTextField userIdField = new JTextField("아이디 입력");
     private JLabel userPasssword = new JLabel("*비밀번호"); //글씨
-    private JPasswordField userPasswordField = new JPasswordField(8);
+    private JPasswordField userPasswordField = new JPasswordField(10);
+    private JLabel retryPW = new JLabel("*비밀번호 확인");
+    private JPasswordField retryPWField= new JPasswordField(10);
     private JButton iD_DuplicateCheckBtn = new JButton("중복 확인");
     private JButton signUpBtn = new JButton("가입하기");
     private JButton cancelBtn = new JButton("취소");
@@ -24,10 +23,10 @@ public class SignUp extends JFrame {
     public SignUp() {
         setTitle("회원가입 화면");
         setSize(500, 800);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         initComponents();
-        //addComponents();
         setFocusListener();
         setEventListeners();
 
@@ -37,49 +36,55 @@ public class SignUp extends JFrame {
 
     private void initComponents() {
         jPanel.setLayout(null);
-
         jPanel.add(infor);
         infor.setBounds(220, 20, 150, 50);
-
         jPanel.add(userName);
         userName.setBounds(160, 50, 150, 100);
-
         jPanel.add(userNameField);
         userNameField.setBounds(160, 110, 150, 30);
-
         jPanel.add(userId);
         userId.setBounds(160, 110, 150, 100);
-
         jPanel.add(userIdField);
         userIdField.setBounds(160, 170, 150, 30);
 
         jPanel.add(userPasssword);
         userPasssword.setBounds(160, 170, 150, 100);
-
         jPanel.add(userPasswordField);
         userPasswordField.setBounds(160, 230, 150, 30);
+        jPanel.add(retryPW);
+        retryPW.setBounds(160, 230, 150, 100);
+        jPanel.add(retryPWField);
+        retryPWField.setBounds(160,290,150,30);
 
         jPanel.add(iD_DuplicateCheckBtn);
         iD_DuplicateCheckBtn.setBounds(320, 170, 90, 30);
-        iD_DuplicateCheckBtn.setBackground(Color.LIGHT_GRAY);
-
         jPanel.add(signUpBtn);
         signUpBtn.setBounds(160, 700, 150, 50);
-        signUpBtn.setBackground(Color.LIGHT_GRAY);
-
         jPanel.add(cancelBtn);
         cancelBtn.setBounds(350, 700, 80, 50);
-        cancelBtn.setBackground(Color.LIGHT_GRAY);
     }
 
     private void setEventListeners() {
-        signUpBtn.addActionListener(e -> joinMember());
+        signUpBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                joinMember();
+            }
+        });
 
-        iD_DuplicateCheckBtn.addActionListener(e -> idDuplicate_Check());
+        iD_DuplicateCheckBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                idDuplicate_Check();
+            }
+        });
 
-        cancelBtn.addActionListener(e -> {
-            dispose();
-            new Login();
+        cancelBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                //new Login();
+            }
         });
     }
 
@@ -119,13 +124,12 @@ public class SignUp extends JFrame {
 
     private void joinMember() {
         String name = userNameField.getText();
-        String id = userIdField.getText();
+        String id = userIdField.getText().toString();
         String password = new String(userPasswordField.getPassword());
-        String fileName = "src/Member.txt";
+        String fileName = "C:\\JAVA\\ExGUI\\src\\memberData.txt";
         try {
             if(!isFieldCheck()) {return;}
             if(!idDuplicate_Check()) {return;}
-
             File file = new File(fileName);
             BufferedWriter out = new BufferedWriter(new FileWriter(file, true));
 
@@ -145,8 +149,8 @@ public class SignUp extends JFrame {
     }
 
     private boolean idDuplicate_Check() {
-        String id = userIdField.getText();
-        String fileName = "src/Member.txt";
+        String id = userIdField.getText().toString();
+        String fileName = "C:\\JAVA\\ExGUI\\src\\memberData.txt";
         try {
             File file = new File(fileName);
             BufferedReader in = new BufferedReader(new FileReader(file));
@@ -158,6 +162,9 @@ public class SignUp extends JFrame {
                         in.close();
                         JOptionPane.showMessageDialog(null, "이미 존재하는 ID입니다.", "회원가입오류", JOptionPane.ERROR_MESSAGE);
                         return false;
+                    } else {
+                        JOptionPane.showMessageDialog(null,"사용 가능한 ID입니다.","SUCCESS",JOptionPane.INFORMATION_MESSAGE);
+                        return true;
                     }
                 }
             }
@@ -165,7 +172,6 @@ public class SignUp extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        JOptionPane.showMessageDialog(null,"사용 가능한 ID입니다.","",JOptionPane.INFORMATION_MESSAGE);
         return true;
     }
 
@@ -182,6 +188,15 @@ public class SignUp extends JFrame {
             JOptionPane.showMessageDialog(null,"비밀번호를 입력해주세요","입력 오류",JOptionPane.WARNING_MESSAGE);
             return false;
         }
+        else if(!Arrays.equals(userPasswordField.getPassword(), retryPWField.getPassword())) {
+            JOptionPane.showMessageDialog(null,"비밀번호가 일치하지 않습니다.","메시지",JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
         else {return true;}
+    }
+
+
+    public static void main(String[] args) {
+        new SignUp();
     }
 }
