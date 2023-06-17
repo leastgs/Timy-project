@@ -1,4 +1,4 @@
-package EXGUI;
+package Timy.SignUp;
 
 import javax.swing.*;
 import java.awt.event.*;
