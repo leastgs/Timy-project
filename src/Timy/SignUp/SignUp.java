@@ -1,8 +1,11 @@
 package Timy.SignUp;
 
+import Timy.DB.DataBaseManagement;
+
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.*;
+import java.sql.SQLException;
 import java.util.*;
 
 public class SignUp extends JFrame {
@@ -75,7 +78,11 @@ public class SignUp extends JFrame {
         iD_DuplicateCheckBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                idDuplicate_Check();
+                try {
+                    idDuplicate_Check();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
@@ -126,21 +133,9 @@ public class SignUp extends JFrame {
         String name = userNameField.getText();
         String id = userIdField.getText().toString();
         String password = new String(userPasswordField.getPassword());
-        String fileName = "C:\\JAVA\\ExGUI\\src\\memberData.txt";
         try {
-            if(!isFieldCheck()) {return;}
-            if(!idDuplicate_Check()) {return;}
-            File file = new File(fileName);
-            BufferedWriter out = new BufferedWriter(new FileWriter(file, true));
-
-            out.write(name);
-            out.write(" ");
-            out.write(id);
-            out.write(" ");
-            out.write(password);
-            out.newLine();
-            out.close();
-
+            DataBaseManagement DB = new DataBaseManagement(name,id,password);
+            DB.DBInsertUserData();
             JOptionPane.showMessageDialog(null, "가입이 되었습니다","가입 완료",JOptionPane.INFORMATION_MESSAGE);
             dispose();
         } catch (Exception e) {
@@ -148,31 +143,20 @@ public class SignUp extends JFrame {
         }
     }
 
-    private boolean idDuplicate_Check() {
+    private boolean idDuplicate_Check() throws SQLException {
         String id = userIdField.getText().toString();
-        String fileName = "C:\\JAVA\\ExGUI\\src\\memberData.txt";
-        try {
-            File file = new File(fileName);
-            BufferedReader in = new BufferedReader(new FileReader(file));
-            String check;
-            while((check = in.readLine()) != null) {
-                StringTokenizer tokenizer = new StringTokenizer(check," ");
-                while(tokenizer.hasMoreTokens()) {
-                    if(id.equals(tokenizer.nextToken()) && tokenizer.hasMoreTokens()) {
-                        in.close();
-                        JOptionPane.showMessageDialog(null, "이미 존재하는 ID입니다.", "회원가입오류", JOptionPane.ERROR_MESSAGE);
-                        return false;
-                    } else {
-                        JOptionPane.showMessageDialog(null,"사용 가능한 ID입니다.","SUCCESS",JOptionPane.INFORMATION_MESSAGE);
-                        return true;
-                    }
-                }
-            }
-            in.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        boolean idCheck = false;
+        DataBaseManagement DB = new DataBaseManagement(id);
+        idCheck = DB.DBDuplicateIdCheck();
+        if(idCheck) {
+            JOptionPane.showMessageDialog(null, "이미 존재하는 ID입니다.", "회원가입오류", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else
+        {
+            JOptionPane.showMessageDialog(null, "사용 가능한 ID입니다.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+            return true;
         }
-        return true;
+
     }
 
     private boolean isFieldCheck() {
