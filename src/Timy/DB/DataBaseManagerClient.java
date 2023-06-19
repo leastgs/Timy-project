@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 public class DataBaseManagerClient {
     String dbDriver = "com.mysql.cj.jdbc.Driver";
     public static void main(String[] args) {
@@ -17,6 +16,7 @@ public class DataBaseManagerClient {
         Connection connection = null;
 
         try {
+
             Class.forName(dbDriver);
             connection = DriverManager.getConnection(dbUrl, dbUser, dbPwd);
             dbCon = connection;
@@ -24,14 +24,15 @@ public class DataBaseManagerClient {
 
             String sql = "INSERT INTO DBusers (username,userid,password) VALUES (?,?,?)";
             PreparedStatement pstmt = dbCon.prepareStatement(sql);
-            pstmt.setString(1, "ddd");
-            pstmt.setString(2, "wow");
-            pstmt.setString(3, "wowowowow");
+            pstmt.setString(1, "dddgg");
+            pstmt.setString(2, "wowhhh");
+            pstmt.setString(3, "wowhhhowowow");
             pstmt.executeUpdate();
+
         }
         catch (SQLException | ClassNotFoundException e)
         {
-            System.out.println("DB Connection fail");
+            System.err.println("DB Connection fail");
             e.printStackTrace();
         }
 

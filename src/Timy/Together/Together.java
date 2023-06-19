@@ -1,5 +1,8 @@
 package Timy.Together;
 
+import Timy.DB.DataBaseManagement;
+import Timy.Login.Login;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,7 +29,8 @@ public class Together extends JPanel {
     private String savedPurpose = "";
     private String savedTime = "";
     private String savedFriends = "";
-
+    private Login login;
+    String userIdCode  = Login.getUserIdCode();
     public Together() {
         setLayout(null);
         setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
@@ -90,7 +94,17 @@ public class Together extends JPanel {
                 savedPurpose = purposeAnswer.getText();
                 savedTime = timeAnswer.getText();
                 savedFriends = friendsAnswer.getText();
+
+                DataBaseManagement DB = new DataBaseManagement();
+                String user_id1 = userIdCode;
+
+                if(DB.addFollowDBIdCheck(savedFriends)){
+
+                };
+
+
                 // 필요한 액션을 추가하실 수 있습니다. (예: DB에 데이터 저장 등)
+
             }
         });
 
@@ -101,4 +115,5 @@ public class Together extends JPanel {
             }
         });
     }
+
 }

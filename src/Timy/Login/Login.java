@@ -1,9 +1,9 @@
 
 package Timy.Login;
 
-import Timy.DB.DataBaseManagementServer;
+import Timy.DB.DataBaseManagement;
 import Timy.SignUp.SignUp;
-
+import Timy.GUI.Timy;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -16,6 +16,8 @@ public class Login extends JFrame {
     private JPanel jPanel = new JPanel();
     private JTextField textFieldID= new JTextField();
     private JPasswordField passwordField = new JPasswordField(8);
+
+    public static String userIdCode;
 
     //
 
@@ -61,6 +63,7 @@ public class Login extends JFrame {
         loginButton.addActionListener(e -> {
             try {
                 if(loginCheck()) { //로그인 성공시
+                    new Timy();
                     dispose();
                 }
             } catch (SQLException ex) {
@@ -97,12 +100,12 @@ public class Login extends JFrame {
         String password = new String(passwordField.getPassword());
 
         boolean isLoginCheck = false;
-        DataBaseManagementServer DB = new DataBaseManagementServer(id,password);
-        isLoginCheck = DB.DBloginCheck();
+        DataBaseManagement DB = new DataBaseManagement(id,password);
+        isLoginCheck = DB.dbLoginCheck();
 
         if (isLoginCheck) {
+            userIdCode = id;
             JOptionPane.showMessageDialog(null, "로그인 성공", "message", JOptionPane.INFORMATION_MESSAGE);
-                //new Timy();
             return true;
 
         } else {
@@ -115,6 +118,8 @@ public class Login extends JFrame {
     public String getClientID() {
         return clientID;
     }
+
+    public static String getUserIdCode() {return userIdCode;}
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new Login());

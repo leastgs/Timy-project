@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/Timy/Friend/FriendManagement.java" dialect="GenericSQL" />
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/c09dac1f-9899-48b7-8cef-51e504754b4d/console_10.sql" dialect="MySQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>

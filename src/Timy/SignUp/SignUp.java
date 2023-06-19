@@ -1,6 +1,7 @@
 package Timy.SignUp;
 
-import Timy.DB.DataBaseManagementServer;
+import Timy.DB.DataBaseManagement;
+import Timy.Login.Login;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -64,6 +65,7 @@ public class SignUp extends JFrame {
         signUpBtn.setBounds(160, 700, 150, 50);
         jPanel.add(cancelBtn);
         cancelBtn.setBounds(350, 700, 80, 50);
+
     }
 
     private void setEventListeners() {
@@ -88,8 +90,8 @@ public class SignUp extends JFrame {
         cancelBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Login();
                 dispose();
-                //new Login();
             }
         });
     }
@@ -133,7 +135,7 @@ public class SignUp extends JFrame {
         String id = userIdField.getText().toString();
         String password = new String(userPasswordField.getPassword());
         try {
-            DataBaseManagementServer DB = new DataBaseManagementServer(name,id,password);
+            DataBaseManagement DB = new DataBaseManagement(name,id,password);
             DB.DBInsertUserData();
             JOptionPane.showMessageDialog(null, "가입이 되었습니다","가입 완료",JOptionPane.INFORMATION_MESSAGE);
             dispose();
@@ -143,10 +145,11 @@ public class SignUp extends JFrame {
     }
 
     private boolean idDuplicate_Check() throws SQLException {
-        String id = userIdField.getText().toString();
+        String id = userIdField.getText();
         boolean idCheck = false;
-        DataBaseManagementServer DB = new DataBaseManagementServer(id);
-        idCheck = DB.DBDuplicateIdCheck();
+        DataBaseManagement DB = new DataBaseManagement(id);
+        idCheck = DB.dbDuplicateIdCheck();
+
         if(idCheck) {
             JOptionPane.showMessageDialog(null, "이미 존재하는 ID입니다.", "회원가입오류", JOptionPane.ERROR_MESSAGE);
             return false;
