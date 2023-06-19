@@ -1,10 +1,9 @@
 package Timy.SignUp;
 
-import Timy.DB.DataBaseManagement;
+import Timy.DB.DataBaseManagementServer;
 
 import javax.swing.*;
 import java.awt.event.*;
-import java.io.*;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -134,7 +133,7 @@ public class SignUp extends JFrame {
         String id = userIdField.getText().toString();
         String password = new String(userPasswordField.getPassword());
         try {
-            DataBaseManagement DB = new DataBaseManagement(name,id,password);
+            DataBaseManagementServer DB = new DataBaseManagementServer(name,id,password);
             DB.DBInsertUserData();
             JOptionPane.showMessageDialog(null, "가입이 되었습니다","가입 완료",JOptionPane.INFORMATION_MESSAGE);
             dispose();
@@ -146,7 +145,7 @@ public class SignUp extends JFrame {
     private boolean idDuplicate_Check() throws SQLException {
         String id = userIdField.getText().toString();
         boolean idCheck = false;
-        DataBaseManagement DB = new DataBaseManagement(id);
+        DataBaseManagementServer DB = new DataBaseManagementServer(id);
         idCheck = DB.DBDuplicateIdCheck();
         if(idCheck) {
             JOptionPane.showMessageDialog(null, "이미 존재하는 ID입니다.", "회원가입오류", JOptionPane.ERROR_MESSAGE);

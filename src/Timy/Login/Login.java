@@ -1,16 +1,12 @@
 
 package Timy.Login;
 
-import Timy.DB.DataBaseManagement;
+import Timy.DB.DataBaseManagementServer;
 import Timy.SignUp.SignUp;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class Login extends JFrame {
@@ -101,7 +97,7 @@ public class Login extends JFrame {
         String password = new String(passwordField.getPassword());
 
         boolean isLoginCheck = false;
-        DataBaseManagement DB = new DataBaseManagement(id,password);
+        DataBaseManagementServer DB = new DataBaseManagementServer(id,password);
         isLoginCheck = DB.DBloginCheck();
 
         if (isLoginCheck) {

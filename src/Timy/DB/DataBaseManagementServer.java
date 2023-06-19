@@ -4,9 +4,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataBaseManagement {
+public class DataBaseManagementServer {
 
     String dbUrl = "jdbc:mysql://127.0.0.1:3306/TimyDB";
+//  String dbUrl = "jdbc:mysql://172.16.27.99:3306/TimyDB?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
     String dbUser = "ldgsmacbook";
     String dbPwd = "timyDB1234!!";
     String dbDriver = "com.mysql.cj.jdbc.Driver";
@@ -17,14 +18,14 @@ public class DataBaseManagement {
 
     Connection dbCon = null;
 
-    public DataBaseManagement(String idData){
+    public DataBaseManagementServer(String idData){
         this.idData = idData;
     }
-    public DataBaseManagement(String idData, String passwordData){
+    public DataBaseManagementServer(String idData, String passwordData){
         this.idData = idData;
         this.passwordData = passwordData;
     }
-    public DataBaseManagement(String nicknameData,String idData, String passwordData){
+    public DataBaseManagementServer(String nicknameData, String idData, String passwordData){
         this.nicknameData = nicknameData;
         this.idData = idData;
         this.passwordData = passwordData;
@@ -50,7 +51,7 @@ public class DataBaseManagement {
 
         DBConnection(); // 서버연결
 
-        String sql = "INSERT INTO users (username,userid,password) VALUES (?,?,?)";
+        String sql = "INSERT INTO DBusers (username,userid,password) VALUES (?,?,?)";
         PreparedStatement pstmt = dbCon.prepareStatement(sql);
         pstmt.setString(1, nicknameData);
         pstmt.setString(2, idData);
@@ -64,7 +65,7 @@ public class DataBaseManagement {
         List<String> userIdCheckList = new ArrayList<>();
         boolean idCheck = false;
 
-        String sql = "SELECT userid FROM users";
+        String sql = "SELECT userid FROM DBusers";
         PreparedStatement pstmt = dbCon.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
 
@@ -86,7 +87,7 @@ public class DataBaseManagement {
     public Boolean DBloginCheck() throws SQLException {
         DBConnection();
 
-        String sql = "SELECT * FROM users WHERE userid = ? AND password = ?";
+        String sql = "SELECT * FROM DBusers WHERE userid = ? AND password = ?";
         PreparedStatement pstmt = dbCon.prepareStatement(sql);
 
         pstmt.setString(1, idData);
@@ -110,7 +111,7 @@ public class DataBaseManagement {
     }
 
     public static void main(String[] args) throws SQLException {
-        DataBaseManagement DB = new DataBaseManagement("wbwb","asdd","nickd");
+        DataBaseManagementServer DB = new DataBaseManagementServer("wbwb","asdd","nickd");
         DB.DBDuplicateIdCheck();
     }
 

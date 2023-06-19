@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가">
+    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="20220619.2 fix">
+      <change afterPath="$PROJECT_DIR$/src/Timy/Allday.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagementServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Login/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,45 +75,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/Database&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JAVA/Timy-project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "feature/Database",
+    "last_opened_file_path": "/Users/ldgsmacbook/Downloads/Timy-project/src/Timy/DB",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;MySQL&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Timy/DB" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Timy" />
+      <recent name="$PROJECT_DIR$/src/Timy/TodoList" />
+      <recent name="$PROJECT_DIR$/src/Timy/GUI" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Timy/Together" />
-      <recent name="$PROJECT_DIR$/src/Timy" />
-      <recent name="C:\JAVA\Timy-project\src\Timy" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.Allday">
-    <configuration name="Allday" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Timy.GUI.Allday.Allday" />
+  <component name="RunManager" selected="애플리케이션.DataBaseManagementServer">
+    <configuration name="DataBaseManagementServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Timy.DB.DataBaseManagementServer" />
       <module name="Timy-project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Timy.GUI.Allday.*" />
+          <option name="PATTERN" value="Timy.DB.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,8 +125,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataBaseManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Timy.DB.DataBaseManagement" />
+    <configuration name="DataBaseManagerClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Timy.DB.DataBaseManagerClient" />
       <module name="Timy-project" />
       <extension name="coverage">
         <pattern>
@@ -140,19 +151,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Timy.SignUp.SignUp" />
-      <module name="Timy-project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Timy.SignUp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Timy.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Timy.Main" />
       <module name="Timy-project" />
@@ -166,13 +164,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Todolist" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Timy.TodoList.Todolist" />
+      <module name="Timy-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Timy.TodoList.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.Allday" />
+        <item itemvalue="애플리케이션.DataBaseManagementServer" />
+        <item itemvalue="애플리케이션.DataBaseManagerClient" />
         <item itemvalue="애플리케이션.Timy.Main" />
+        <item itemvalue="애플리케이션.Todolist" />
         <item itemvalue="애플리케이션.Login" />
-        <item itemvalue="애플리케이션.SignUp" />
-        <item itemvalue="애플리케이션.DataBaseManagement" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +207,7 @@
       <workItem from="1686975200293" duration="7175000" />
       <workItem from="1686987289399" duration="7892000" />
       <workItem from="1687109895431" duration="7233000" />
+      <workItem from="1687151573253" duration="11405000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684306365539</created>
@@ -239,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687151327918</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="20220619.2 fix">
+      <created>1687151618939</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687151618939</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +292,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="calandar 기능추가" />
     <MESSAGE value="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가" />
+    <MESSAGE value="20220619.2 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="20220619.2 fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
