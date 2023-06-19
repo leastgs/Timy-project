@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="20220613.1 캘린더기능추가">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/DB/DataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/Friend/FriendManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/Together/Together.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Timy-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Timy-project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/GUI/Timy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Login/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +195,7 @@
       <workItem from="1686925023339" duration="1141000" />
       <workItem from="1686975200293" duration="7175000" />
       <workItem from="1686987289399" duration="7892000" />
-      <workItem from="1687109895431" duration="6785000" />
+      <workItem from="1687109895431" duration="7233000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684306365539</created>
@@ -244,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684810757041</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가">
+      <created>1687151327918</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687151327918</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +256,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature/Database" />
+                        <option value="origin/feature/DataBase" />
                       </list>
                     </value>
                   </entry>
@@ -277,7 +272,8 @@
     <MESSAGE value="init project" />
     <MESSAGE value="init" />
     <MESSAGE value="calandar 기능추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="calandar 기능추가" />
+    <MESSAGE value="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

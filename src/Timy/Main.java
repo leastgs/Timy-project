@@ -1,6 +1,5 @@
 package Timy;
 
-import Timy.GUI.Timy;
 import Timy.Login.Login;
 import Timy.SignUp.SignUp;
 
