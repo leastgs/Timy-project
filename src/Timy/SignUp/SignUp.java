@@ -138,6 +138,7 @@ public class SignUp extends JFrame {
             DataBaseManagement DB = new DataBaseManagement(name,id,password);
             DB.DBInsertUserData();
             JOptionPane.showMessageDialog(null, "가입이 되었습니다","가입 완료",JOptionPane.INFORMATION_MESSAGE);
+            new Login();
             dispose();
         } catch (Exception e) {
             e.printStackTrace();

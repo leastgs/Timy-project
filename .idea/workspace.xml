@@ -4,42 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="20220619.3 client updata">
-      <change afterPath="$PROJECT_DIR$/src/EveryWeeks/EveryWeeks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/GUI/Allday/Allday.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/GUI/Allday/AlldayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/GUI/Calender/Calendar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/GUI/Calender/CalendarPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/GUI/MyINFO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timy/GUI/Timy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/AppFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/ButtonPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Footer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/MyItemListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/TitleBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Todolist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/override.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_06_15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_06_20.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_06_21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_06_22.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_06_23.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_06_24.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_07_01.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/memo/memo_2023_09_18.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="2f4e8fe1-1244-46cf-8a55-366fcee74079" name="변경" comment="20220620.4 업데이트">
+      <change afterPath="$PROJECT_DIR$/src/Timy/GUI/Follow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Timy/chat/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Timy/chat/Gui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Timy/chat/SendThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Timy/chatServer/ReceiveThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Timy/chatServer/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Member.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Member.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/Allday.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Allday.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagementServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/Friend/FriendManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/DB/DataBaseManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timy/GUI/Timy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/GUI/Timy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timy/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/SignUp/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timy/Together/Together.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timy/Together/Together.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,14 +108,14 @@
       <recent name="$PROJECT_DIR$/src/Timy/DB" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Timy/GUI" />
       <recent name="$PROJECT_DIR$/src/Timy/Login" />
       <recent name="$PROJECT_DIR$/src/Timy" />
-      <recent name="$PROJECT_DIR$/src/Timy/GUI" />
       <recent name="$PROJECT_DIR$/src/Timy/TodoList" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.Timy.Main">
+  <component name="RunManager" selected="애플리케이션.Login">
     <configuration name="DataBaseManagerClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Timy.DB.DataBaseManagerClient" />
       <module name="Timy-project" />
@@ -206,9 +183,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.Login" />
         <item itemvalue="애플리케이션.Timy.Main" />
         <item itemvalue="애플리케이션.Timy" />
-        <item itemvalue="애플리케이션.Login" />
         <item itemvalue="애플리케이션.SignUp" />
         <item itemvalue="애플리케이션.DataBaseManagerClient" />
       </list>
@@ -236,7 +213,8 @@
       <workItem from="1687109895431" duration="7233000" />
       <workItem from="1687151573253" duration="26881000" />
       <workItem from="1687192980110" duration="4145000" />
-      <workItem from="1687197154190" duration="7470000" />
+      <workItem from="1687197154190" duration="16199000" />
+      <workItem from="1687214724511" duration="7916000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1684306365539</created>
@@ -294,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687172530170</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="20220620.4 업데이트">
+      <created>1687206070549</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687206070549</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +315,18 @@
     <MESSAGE value="20220619.2 DB라이브러리 추가 및 회원가입및 로그인 중복체크등 메소드추가" />
     <MESSAGE value="20220619.2 fix" />
     <MESSAGE value="20220619.3 client updata" />
-    <option name="LAST_COMMIT_MESSAGE" value="20220619.3 client updata" />
+    <MESSAGE value="20220620.4 업데이트" />
+    <option name="LAST_COMMIT_MESSAGE" value="20220620.4 업데이트" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

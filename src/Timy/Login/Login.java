@@ -22,7 +22,6 @@ public class Login extends JFrame {
     //
 
     //
-
     public String storeID;
     public String clientID;
 
@@ -63,7 +62,7 @@ public class Login extends JFrame {
         loginButton.addActionListener(e -> {
             try {
                 if(loginCheck()) { //로그인 성공시
-                    new Timy();
+                    new Timy(this);
                     dispose();
                 }
             } catch (SQLException ex) {

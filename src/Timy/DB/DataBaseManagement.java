@@ -1,7 +1,9 @@
 package Timy.DB;
 
+import Timy.GUI.Follow;
 import Timy.Login.Login;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +21,10 @@ public class DataBaseManagement {
     String passwordData;
     String location,purpose;
     int time;
-
+    String exportID;
     private Login login;
-    String userIdCode  = Login.getUserIdCode();
-    Connection dbCon = null;
+    public String userIdCode  = Login.getUserIdCode();
+    public Connection dbCon = null;
     public DataBaseManagement(){}
     public DataBaseManagement(String idData){
         this.idData = idData;
@@ -42,7 +44,7 @@ public class DataBaseManagement {
         this.time = time;
     }
 
-    private void dBConnection(){ // DB 연결 메소드
+    public void dBConnection(){ // DB 연결 메소드
 
         Connection connection = null;
 
@@ -119,30 +121,8 @@ public class DataBaseManagement {
         try {
             dBConnection();
             Statement stmt = dbCon.createStatement();
-
-            String checkUsersQuery = String.format("SELECT * FROM DBusers WHERE userid IN ('%s', '%s');", user_id1, user_id2);
-            ResultSet userResultSet = stmt.executeQuery(checkUsersQuery);
-
-            int counter = 0;
-            while (userResultSet.next()) {
-                counter++;
-            }
-
-            if (counter == 2) {
-                String checkFriendQuery = String.format("SELECT * FROM DBFollows WHERE (user_id = '%s' AND friend_id = '%s') OR (user_id = '%s' AND friend_id = '%s');", user_id1, user_id2, user_id2, user_id1);
-                ResultSet friendResultSet = stmt.executeQuery(checkFriendQuery);
-
-                if (friendResultSet.next()) {
-                    System.out.println("이미 친구된 사용자 ID입니다.");
-                } else {
-                    String insertQuery = String.format("INSERT INTO DBFollows(user_id, friend_id) VALUES ('%s', '%s');", user_id1, user_id2);
-                    stmt.executeUpdate(insertQuery);
-
-                    System.out.println("친구목록에 추가되었습니다.");
-                }
-            } else {
-                System.out.println("입력된 사용자 ID 중 존재하지 않는 ID가 있습니다.");
-            }
+            String insertQuery = String.format("INSERT INTO DBFollows(user_id, friend_id) VALUES ('%s', '%s');", user_id1, user_id2);
+            stmt.executeUpdate(insertQuery);
 
             dbCon.close();
         } catch (SQLException e) {
@@ -220,7 +200,6 @@ public class DataBaseManagement {
 
             String checkUsersQuery = String.format("SELECT * FROM DBusers WHERE userid IN ('%s', '%s');", user_id1, user_id2); //dbuser확인
             ResultSet userResultSet = stmt.executeQuery(checkUsersQuery);
-
             int counter = 0;
             while (userResultSet.next()) {
                 counter++;
@@ -232,16 +211,19 @@ public class DataBaseManagement {
 
                 if (friendResultSet.next()) {
                     System.out.println("이미 팔로우된 사용자 ID입니다.");
-                    return false;
-                } else {
-                    String insertQuery = String.format("INSERT INTO DBtempFollows(user_id, friend_id) VALUES ('%s', '%s');", user_id1, user_id2);
-                    stmt.executeUpdate(insertQuery);
+                    JOptionPane.showConfirmDialog(null,"이미 팔로우된 사용자 ID입니다.","실패",JOptionPane.WARNING_MESSAGE);
 
-                    System.out.println("팔로우 메시지를 보냈습니다..");
+                    return false;
+                } else
+                {
                     return true;
                 }
-            } else {
+
+            }
+
+            else {
                 System.out.println("입력된 사용자 ID 중 존재하지 않는 ID가 있습니다.");
+                JOptionPane.showConfirmDialog(null,"입력된 사용자 ID 중 존재하지 않는 ID가 있습니다.","실패",JOptionPane.WARNING_MESSAGE);
                 return false;
             }
 
@@ -249,6 +231,18 @@ public class DataBaseManagement {
             e.printStackTrace();
         }
         return false;
+    }
+    public void addTempFollows(String user_id2) {
+        String user_id1 = userIdCode;
+        try {
+            dBConnection();
+            Statement stmt = dbCon.createStatement();
+            String insertQuery = String.format("INSERT INTO DBtempFollows(user_id, friend_id) VALUES ('%s', '%s');", user_id1, user_id2);
+            stmt.executeUpdate(insertQuery);
+            System.out.println("추가완료");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean addFollowDBIdCheck(String user_id2) {
@@ -270,6 +264,7 @@ public class DataBaseManagement {
 
                 if (friendResultSet.next()) {
                     System.out.println("이미 친구된 사용자 ID입니다.");
+                    return false;
                 }
                 else{
                     return true;
@@ -285,7 +280,7 @@ public class DataBaseManagement {
 
         return false;
     }
-    public boolean friendAcceptCheck() throws SQLException {
+    public boolean friendAcceptCheck() throws SQLException { //temp에 있으면 옆의 행 추출
         dBConnection(); // 서버연결
         Statement stmt = dbCon.createStatement();
 
@@ -311,6 +306,8 @@ public class DataBaseManagement {
         return false;
     }
 
+
+
     public void DBInsertFriendsWithWork() throws SQLException { //DB에 같이 할 일 입력 메소드
         dBConnection(); // 서버연결
         String sql = "INSERT INTO DBtogether (location,purpose,time) VALUES (?,?,?)";
@@ -321,6 +318,71 @@ public class DataBaseManagement {
         pstmt.setString(3, String.valueOf(time));
         pstmt.executeUpdate();
 
+    }
+    public void setExportData(String exportID) {
+        this.exportID = exportID;
+        new Follow(exportID);
+    }
+
+    public void threadTempfollowCheck(String id){
+        String userId = id;
+        int interval = 3000;
+
+        DataBaseManagement DB = new DataBaseManagement();
+        // 스레드를 생성하고 실행
+        new Thread(() -> {
+            try {
+                DB.dBConnection();
+                // 2열과 3열에서 user_id 값과 일치하는 데이터가 있는지 검사하는 SQL 쿼리
+                String query = "SELECT * FROM DBtempfollows WHERE user_id = ? OR friend_id = ?";
+                PreparedStatement stmt = DB.dbCon.prepareStatement(query);
+                String exportID;
+
+                while (true) {
+                    stmt.setString(1, userId); // SQL 쿼리의 첫 번째 매개변수로 user_id 값을 설정
+                    stmt.setString(2, userId); // SQL 쿼리의 두 번째 매개변수로 user_id 값을 설정
+                    ResultSet rs = stmt.executeQuery();
+
+                    // 결과가 있으면 특정 코드 실행
+                    if (rs.next()) {
+
+                        if (userId.equalsIgnoreCase(rs.getString(2))) {
+                            exportID = rs.getString(3);
+                            setExportData(exportID);
+                        } else if (userId.equalsIgnoreCase(rs.getString(3))) {
+                            exportID = rs.getString(2);
+                            setExportData(exportID);
+                        }
+                        SwingUtilities.invokeLater(() -> {
+                            // UI를 업데이트하려면, 해당 구성 요소만 리프레시합니다.
+
+
+                            // 다음 메서드 중 하나를 사용하여 해당 부분만 다시 그립니다.
+                            // component.revalidate();
+                            // component.repaint();
+
+                        });
+
+
+                        System.out.println("User ID found: " + userId);
+
+                    } else {
+                        System.out.println("User ID not found");
+                    }
+
+                    try {
+                        Thread.sleep(interval); // 지정된 시간 간격 동안 대기
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+
+                DB.dbCon.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
 
